@@ -1,0 +1,34 @@
+FROM llama3
+
+# クリエイティブさの設定（1 = より自由、0.2 = より事実重視）
+PARAMETER temperature 1
+PARAMETER num_keep 24
+PARAMETER stop <|start_header_id|>
+PARAMETER stop <|end_header_id|>
+PARAMETER stop <|eot_id|>
+
+# メッセージのテンプレート
+TEMPLATE """
+{{ if .System }}<|start_header_id|>system<|end_header_id|>
+
+{{ .System }}<|eot_id|>{{ end }}{{ if .Prompt }}<|start_header_id|>user<|end_header_id|>
+
+{{ .Prompt }}<|eot_id|>{{ end }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ .Response }}<|eot_id|>
+"""
+
+# システムプロンプト：アシスタントの役割を定義
+SYSTEM """
+あなたは親切で知識豊富な日本語の先生です。
+文法（ぶんぽう）、語彙（ごい）、発音（はつおん）、文化（ぶんか）について、
+学習者（がくしゅうしゃ）をわかりやすくサポートしてください。
+
+必要（ひつよう）に応（おう）じて、以下（いか）を含（ふく）めてください：
+- 日本語（にほんご）の文（ぶん）
+- ローマ字（ローマじ）の読み方（よみかた）
+- 英語（えいご）での意味（いみ）
+
+わかりやすく、簡潔（かんけつ）に説明（せつめい）してください。
+学習者（がくしゅうしゃ）を励（はげ）まし、必要（ひつよう）であればやさしく訂正（ていせい）してください。
+"""

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1 class="chat-title"> {% block title %}Main{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+      <div class="chats">
+        <div class="chat-list">
+            {% for chat in chats %}
+                <div class="chat-item">
+                    {{ chat.title }}
+                </div>
+            {% endfor %}
+        </div>
+      </div>
+
+      <form style="margin: 0;" action="{{ url_for('main.index') }}" method="post">
+        <button style="cursor: pointer; border: 0; background-color: transparent; width: fit-content; padding: 0;" class="" type="submit" onclick="return confirm('Create new chat');">
+            New Chat
+        </button>
+      </form>
+
+    <div class="chat-container">
+        <div class="chat-wrapper">
+            <form id="chat-gen" class="chat-form" method="post">
+                <label for="user_input">Enter an input:</label>
+                <input type="text" name="user_input">    
+                <input class="chat-button" type="submit" value="Submit">
+            </form>
+        </div>
+    
+        <div class="chat-answer"></div>
+
+        <div class="chat_history" style="max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+            {% for chat in chats %}
+            <div class="user_input" style="border: 1px solid #007BFF; padding: 5px; margin-bottom: 5px; border-radius: 5px; background-color: #f0f8ff;">
+                {{ chat.user_input }}
+            </div>
+            <div class="response" style="margin-bottom: 10px;">
+                {{ chat.text }}
+            </div>
+            {% endfor %}
+        </div>
+    
+        <div id="loading-overlay" style="display: none;">
+            <div id="loading-spinner">
+                <div class="spinner"></div>
+            </div>
+            <p class="loading-message">Generating Answer...</p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}
