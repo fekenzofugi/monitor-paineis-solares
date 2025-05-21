@@ -58,7 +58,6 @@ const Wrapper = styled.nav`
     display: flex;
     justify-content: space-between;
     width: 1200px;
-    border: 1px solid black;
   }
 
   .nav-link {

@@ -25,11 +25,20 @@ const Wrapper = styled.div`
     max-width: 1200px;
     display: grid;
     grid-template-columns: 3fr 2fr;
-    border: 1px solid black;
   }
   .home-banner-phrase {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  @media (max-width: 700px) {
+    .home-banner-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .home-banner-phrase {
+      margin-top: 1rem;
+    }
   }
 `

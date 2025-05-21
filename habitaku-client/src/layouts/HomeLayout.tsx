@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { checkDefaultTheme } from "../App";
 import { useContext, createContext, useState } from "react";
 import Navbar from "../components/Nav/Navbar";
+import Footer from "../components/Footer/Footer";
 
 type UiContextType = {
     isDarkTheme: boolean;
@@ -31,6 +32,7 @@ const HomeLayout = () => {
         }}>  
             <Navbar/>
             <Outlet />
+            <Footer />
         </uiContext.Provider>
     );
 }
