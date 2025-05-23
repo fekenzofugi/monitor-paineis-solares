@@ -1,4 +1,4 @@
-import { HomeBanner } from "../../components/Banner/"
+import { HomeBanner } from "../../components/Banner"
 
 const LandingPage = () => {
     return (

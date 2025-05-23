@@ -4,6 +4,7 @@ import LandingPage from './pages/Landing/LandingPage'
 import { NotFound } from './pages/Errors'
 import { Login } from './pages/Auth'
 import { Register } from './pages/Auth'
+import { Chat } from './pages/Chat'
 
 const router = createBrowserRouter([{
     path: "/",
@@ -17,7 +18,11 @@ const router = createBrowserRouter([{
       element: <Login/>},
     {
       path: "/register",
-      element: <Register/>},]
+      element: <Register/>},
+    {
+      path: "/chat",
+      element: <Chat/>,
+    }]
 }])
 
 export const checkDefaultTheme = () => {

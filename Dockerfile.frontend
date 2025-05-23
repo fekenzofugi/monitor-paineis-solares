@@ -1,0 +1,20 @@
+# Use an official Node.js runtime as the base image
+FROM node:18-alpine
+
+# Set the working directory inside the container
+WORKDIR /frontend
+
+# Copy package.json and yarn.lock to leverage Docker caching
+COPY package.json yarn.lock ./
+
+# Install dependencies
+RUN yarn install
+
+# Copy the rest of the application files
+COPY . .
+
+# Expose the application's port
+EXPOSE 3000
+
+# Command to start the application in development mode
+CMD ["yarn", "dev"]

@@ -1,9 +1,9 @@
 services:
-  portaai_web:
-    container_name: portaai_web
+  api:
+    container_name: api
     build:
       context: .
-      dockerfile: Dockerfile.app
+      dockerfile: Dockerfile.server
     depends_on:
       - ollama
       - db
@@ -11,9 +11,7 @@ services:
     ports:
       - "5000:5000"
     networks:
-      - portaai
-    devices:
-      - "/dev/video0:/dev/video0"  # Maps the webcam device
+      - api
     deploy:
       resources:
         reservations:
@@ -21,6 +19,18 @@ services:
             - driver: "nvidia"
               count: 1
               capabilities: ["gpu"]
+
+  frontend:
+    container_name: frontend
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    depends_on:
+      - api
+    ports:
+      - "3000:3000"
+    networks:
+      - api
 
   ollama:
     volumes:
@@ -53,25 +63,25 @@ services:
     ports:
       - "6379:6379"
     networks:
-      - portaai
+      - api
   
   db:
     container_name: db
     image: postgres:17
     restart: always
     environment:
-      POSTGRES_USER: portaai_user
-      POSTGRES_PASSWORD: portaai_password
-      POSTGRES_DB: portaai_db
+      POSTGRES_USER: api_user
+      POSTGRES_PASSWORD: api_password
+      POSTGRES_DB: api_db
     ports:
       - "5432:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
     networks:
-      - portaai
+      - api
 
 networks:
-  portaai:
+  api:
     external: false
 
 volumes:

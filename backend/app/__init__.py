@@ -42,13 +42,7 @@ def create_app(test_config=None):
     app.config['SESSION_SQLALCHEMY'] = db
     sess.init_app(app)
 
-    from .landing import landing_bp as landing_blueprint
-    app.register_blueprint(landing_blueprint)
-
     from .auth import auth_bp as auth_blueprint
     app.register_blueprint(auth_blueprint)
-
-    from .main import main_bp as main_blueprint
-    app.register_blueprint(main_blueprint)
 
     return app
