@@ -14,7 +14,6 @@ const Chat = () => {
 export default Chat;
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: var(--background-secondary-color);
+    display: flex;
+    background-color: var(--background-secondary-color);
 `;
