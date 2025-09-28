@@ -9,8 +9,10 @@ redis
 psycopg2-binary
 gtts
 kagglehub
+tensorflow
 numpy   
 opencv-python
+facenet-pytorch
 torch
 matplotlib
 scikit-learn

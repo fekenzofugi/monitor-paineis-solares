@@ -1,3 +1,3 @@
-# Habitaku
+# Monitor de Paineis Solares
 
-Habitaku is an app designed to help you learn Japanese through engaging conversations with AI. Practice speaking, improve your vocabulary, and build confidence in real-life scenarios.
+Aplicação Web intuitiva para monitoramento de paineis solares. É possível monitorar o estado físico das

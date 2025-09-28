@@ -1,7 +1,7 @@
 FROM ollama/ollama
 
 COPY ./pull_model.sh /pull_model.sh
-COPY teacher.modelfile /teacher.modelfile
+COPY doorman.modelfile /doorman.modelfile
 
 RUN chmod +x /pull_model.sh
 
