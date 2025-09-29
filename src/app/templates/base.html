@@ -36,3 +36,29 @@
   {% endfor %}
   {% block content %}{% endblock %}
 </section>
+
+<div class="footer">
+  <div class="footer-content">
+    <h1 style="margin:0; display: flex; justify-content: center;">
+      <a href="{{ url_for('landing.index') }}">
+        <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Logo" style="height:40px; width:auto; display:block;">
+      </a>
+    </h1>
+    <p>Transformando dados de energia solar em informação acessível</p>
+    
+    <div class="social-icons">
+    <a href="https://www.facebook.com" target="_blank">
+      <img src="{{ url_for('static', filename='images/facebook.svg') }}" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com" target="_blank">
+      <img src="{{ url_for('static', filename='images/instagram.svg') }}" alt="Facebook">
+    </a>
+    <a href="https://www.linkedin.com" target="_blank">
+      <img src="{{ url_for('static', filename='images/linkedin.svg') }}" alt="Facebook">
+    </a>
+  </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 SolarMind. Todos os direitos reservados.</p>
+  </div>
+</div>

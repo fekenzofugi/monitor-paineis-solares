@@ -11,30 +11,18 @@
 				<p>Monitoramento inteligente de painéis solares com auxílio de IA.</p>
 				<a href="{{ url_for('auth.register') }}" class="call-to-action">Comece Aqui</a>
 			</div>
-        <video autoplay muted loop playsinline style="width:100%; border-radius:12px;">
-            <source src="static/images/painel1.mp4" type="video/mp4">
-        </video>
+      		<img src="{{ url_for('static', filename='images/home-animated-11150b30951a2af920c7f9aad4ca7440.svg') }}">
 		</div>
 	</div>
-	<div class="footer">
-		<div class="footer-content">
-			<h2>SolarMind</h2>
-			<p>Transformando dados de energia solar em informação acessível</p>
-			
-			<div class="social-icons">
-			<a href="https://www.facebook.com" target="_blank">
-				<img src="static/images/facebook.svg" alt="Facebook">
-			</a>
-			<a href="https://www.instagram.com" target="_blank">
-				<img src="static/images/instagram.svg" alt="Instagram">
-			</a>
-			<a href="https://www.linkedin.com" target="_blank">
-				<img src="static/images/linkedin.svg" alt="LinkedIn">
-			</a>
-		</div>
-		</div>
-		<div class="footer-bottom">
-			<p>&copy; 2025 SolarMind. Todos os direitos reservados.</p>
+	<div class="about">
+		<div class="about-container">
+			<div class="imagem">
+				<img src="{{ url_for('static', filename='images/logo2.png') }}" alt="SolarMind Logo">
+			</div>
+			<div class="frase">
+				<h2>Sobre a SolarMind</h2>
+				<p>Transformamos dados de suas placas solares em informações simples e acessíveis, ajudando você a monitorar, otimizar e economizar energia de forma inteligente.</p>
+			</div>
 		</div>
 	</div>
 {% endblock %}
