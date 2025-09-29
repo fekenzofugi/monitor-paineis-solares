@@ -1,23 +1,26 @@
 html {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: #efeadf;
+    background: #fff; /* Cor de fundo clara */
     background-size: cover;
     min-height: 100vh;
 }
+
 body {
     margin: 0;
     width: 100%;
 }
+
 a {
-    color: #17363f;
+    color: #ff6f00; /* Azul escuro para links */
 }
+
 .nav-wrapper {
-    background-color: #17363f;
-    width: 100%;
+    background-color: #fff; /* Azul escuro para o fundo da navegação */
+    width: 100%;    
 }
 
 nav {
-    background-color: #17363f;
+    background-color: #fff; /* Azul escuro para o fundo do nav */
     max-width: 960px;
     display: flex;
     justify-content: space-between;
@@ -25,20 +28,24 @@ nav {
     align-items: center;
     padding: 0.5rem 1rem;
 }
+
 h1 {
-    color: #17363f;
+    color: #ff6f00; /* Azul escuro para os títulos */
 }
+
 nav h1 {
     margin: 0;
 }
+
 nav h1 a {
     text-decoration: none;
-    color: #f3f1eb !important;
+    color: #ff6f00 !important; /* Branco para links no header */
     display: flex;
     gap: 0.5rem;
     justify-content: center;
     align-items: center;
 }
+
 nav ul {
     display: flex;
     list-style: none;
@@ -48,11 +55,11 @@ nav ul {
 }
 
 nav ul li span {
-    color: #f3f1eb;
+    color: #000; /* Branco para os textos do menu */
 }
 
 nav ul li a {
-    color: #f3f1eb;
+    color: #000; /* Branco para os links do menu */
     display: flex;
     align-items: center;
     margin-left: 0.8rem;
@@ -60,16 +67,16 @@ nav ul li a {
 
 .flash {
     padding: 1em;
-    background: #1e5b58;
-    border: 1px solid #f3f1eb;
-    color: #efeadf;
+    background: #ff6f00; /* Azul escuro para a mensagem de flash */
+    border: 1px solid #000;
+    color: #e9f1f7; /* Cor clara para texto */
 }
 
 .content {
     max-width: 960px;
     padding: 0 1rem 1rem;
     margin: 0 auto;
-    background-color: #efeadf;
+    background-color: #ffffff; /* Beige para o conteúdo */
 }
 
 .content:last-child {
@@ -89,6 +96,12 @@ nav ul li a {
 
 .chat-title {
     text-align: center;
+}
+
+.chat-wrapper1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .chat-wrapper {
@@ -118,15 +131,15 @@ nav ul li a {
 }
 
 .chat-button {
-    background-color: #17363f;
-    color: #f3f1eb;
+    background-color: #ff6f00; /* Azul escuro para o botão */
+    color: #000;
     cursor: pointer;
 }
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-  }
+}
 
 #loading-overlay {
     position: fixed;
@@ -144,7 +157,7 @@ nav ul li a {
 
 .spinner {
     border: 4px solid rgba(0, 0, 0, 0.1);
-    border-left-color: #17363f;
+    border-left-color: #ff6f00; /* Azul escuro para o spinner */
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -152,7 +165,7 @@ nav ul li a {
 }
 
 .loading-message {
-    color: #17363f;
+    color: #ff6f00; /* Azul escuro para a mensagem de loading */
     font-size: 16px;
     margin-top: 10px;
     text-align: center;
@@ -178,17 +191,18 @@ nav ul li a {
 }
 
 .banner > svg {
-    max-width:100%;
+    max-width: 100%;
 }
 
 .banner > .phrase > h1 {
     font-size: 3rem;
+    color: #ff6f00; /* Azul escuro para o título da banner */
 }
 
 .call-to-action {
     margin-top: 1rem;
-    background-color: #17363f;
-    color: #f3f1eb;
+    background-color: #ff6f00; /* Azul escuro para o botão CTA */
+    color: #fff;
     padding: 1rem;
     text-align: center;
     border-radius: 10px;
@@ -200,4 +214,97 @@ nav ul li a {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.dashboard-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    gap:25px;
+    padding:25px;
+    font-family:'Segoe UI',Tahoma,Verdana,sans-serif;
+    background:#fff;
+}
+
+.card {
+    background: linear-gradient(135deg,#ffffff,#fff3e0);
+    border-radius:16px;
+    padding:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.12);
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover { transform: translateY(-3px); box-shadow:0 12px 30px rgba(0,0,0,0.18); }
+
+.card h2 { margin-top:0; font-size:1.6em; color:#ff8c42; }
+
+/* Chat */
+.chat-wrapper { display:flex; flex-direction:column; gap:10px; }
+.chat-input { padding:12px; border-radius:12px; border:1px solid #ffb74d; font-size:1em; }
+.chat-button { padding:12px 20px; border:none; background:#ff8c42; color:white; cursor:pointer; border-radius:12px; font-weight:bold; font-size:1em; transition: background 0.2s; }
+.chat-button:hover { background:#ff6f00; }
+
+.auto-buttons { display:flex; gap:10px; flex-wrap:wrap; }
+.auto-btn { padding:8px 12px; border:none; background:#ffb74d; color:white; cursor:pointer; border-radius:8px; font-weight:bold; transition: background 0.2s; }
+.auto-btn:hover { background:#ff8c42; }
+
+.clean-btn { padding:8px 12px; border:none; background:#e53935; color:white; cursor:pointer; border-radius:8px; font-weight:bold; transition: background 0.2s; }
+.clean-btn:hover { background:#b71c1c; }
+
+.chat-answer { margin-top:10px; padding:12px; min-height:60px; border-radius:12px; background:#fff3e0; border:1px solid #ffcc80; color:#333; font-size:0.95em; }
+
+/* Plots */
+.plots-section { display:flex; gap:20px; flex-wrap:wrap; }
+.plot { width:100%; max-width:380px; height:280px; border-radius:12px; background:#fff8f0; box-shadow:0 4px 15px rgba(0,0,0,0.08); }
+
+/* Voting */
+.vote-section { margin-top:15px; display:flex; flex-direction:column; gap:10px; }
+.vote-btn { padding:8px 12px; border:none; background:#ffb74d; color:white; cursor:pointer; border-radius:8px; font-weight:bold; transition: background 0.2s; width:150px; }
+.vote-btn:hover { background:#ff8c42; }
+
+.footer {
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 2px solid #ff6f00;
+    font-family: Arial, sans-serif;
+}
+
+.footer h2 {
+    color: #ff6f00;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.social-icons {
+    margin: 15px 0;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+.social-icons a img {
+    width: 24px;
+    height: 24px;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    border-top: 1px solid #ff6f00;
+    font-size: 12px;
+    color: #555;
 }

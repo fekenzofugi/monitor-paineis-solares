@@ -1,0 +1,1 @@
+from app.projects.views import project_bp
