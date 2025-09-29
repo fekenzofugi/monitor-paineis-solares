@@ -355,3 +355,58 @@ nav ul li a {
         font-size: 15px;
     }
 }
+
+.services {
+    background-color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    color: #ff6f00;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    gap: 30px;
+}
+
+.service {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 30px 20px;
+    max-width: 280px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service svg {
+    margin-bottom: 15px;
+}
+
+.service h3 {
+    color: #ff6f00;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.service p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
